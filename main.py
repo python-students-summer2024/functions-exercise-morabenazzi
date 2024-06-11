@@ -19,16 +19,37 @@ def main():
     - If their answer was correct, congratulate them.
     - If their answer was incorrect, show them the correct answer.
     """
-    print("")  # line break
+    print("")  
     print("Welcome to the Math App!!!")
-    print("")  # line break
-    ### write code to complete this function BELOW here ###
+    print("")  
+    
+    die_1_value = roll_die()
+    die_2_value = roll_die()
 
-    ### write code to complete this function ABOVE here ###
-    print("")  # line break
+    
+    question_type = get_question_type()
+
+    
+    print_question(die_1_value, die_2_value, question_type)
+
+    
+    given_answer = input_answer()
+
+   
+    if given_answer == -1:
+        print_error_message()
+
+    
+    if is_correct_answer(die_1_value, die_2_value, question_type, given_answer):
+        print_congratulations(question_type)
+    else:
+        print_correct_answer(die_1_value, die_2_value, question_type)
+
+    
+    print("")  
     print("Game over!!!")
     print("Thank you for playing!!!\n")
 
 
-# call the main function
+
 main()
